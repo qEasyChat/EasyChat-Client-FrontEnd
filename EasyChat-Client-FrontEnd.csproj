@@ -63,6 +63,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Back-End-API\Client.cs" />
+    <Compile Include="Back-End-API\cpp.cs" />
+    <Compile Include="Back-End-API\cppPINVOKE.cs" />
+    <Compile Include="Back-End-API\cpp_dll.cs" />
+    <Compile Include="Back-End-API\cpp_dllPINVOKE.cs" />
+    <Compile Include="Back-End-API\easy_chat_client_api.cs" />
+    <Compile Include="Back-End-API\easy_chat_client_apiPINVOKE.cs" />
+    <Compile Include="Back-End-API\Login_Exception.cs" />
+    <Compile Include="Back-End-API\Server_Down_Exception.cs" />
+    <Compile Include="Back-End-API\SWIGTYPE_p_std__string.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,5 +107,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
