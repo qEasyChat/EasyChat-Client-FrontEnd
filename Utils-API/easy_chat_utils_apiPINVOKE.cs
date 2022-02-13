@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-class easy_chat_client_apiPINVOKE {
+class easy_chat_utils_apiPINVOKE {
 
   protected class SWIGExceptionHelper {
 
@@ -32,8 +32,8 @@ class easy_chat_client_apiPINVOKE {
     static ExceptionArgumentDelegate argumentNullDelegate = new ExceptionArgumentDelegate(SetPendingArgumentNullException);
     static ExceptionArgumentDelegate argumentOutOfRangeDelegate = new ExceptionArgumentDelegate(SetPendingArgumentOutOfRangeException);
 
-    [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="SWIGRegisterExceptionCallbacks_easy_chat_client_api")]
-    public static extern void SWIGRegisterExceptionCallbacks_easy_chat_client_api(
+    [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="SWIGRegisterExceptionCallbacks_easy_chat_utils_api")]
+    public static extern void SWIGRegisterExceptionCallbacks_easy_chat_utils_api(
                                 ExceptionDelegate applicationDelegate,
                                 ExceptionDelegate arithmeticDelegate,
                                 ExceptionDelegate divideByZeroDelegate, 
@@ -46,8 +46,8 @@ class easy_chat_client_apiPINVOKE {
                                 ExceptionDelegate overflowDelegate, 
                                 ExceptionDelegate systemExceptionDelegate);
 
-    [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="SWIGRegisterExceptionArgumentCallbacks_easy_chat_client_api")]
-    public static extern void SWIGRegisterExceptionCallbacksArgument_easy_chat_client_api(
+    [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="SWIGRegisterExceptionArgumentCallbacks_easy_chat_utils_api")]
+    public static extern void SWIGRegisterExceptionCallbacksArgument_easy_chat_utils_api(
                                 ExceptionArgumentDelegate argumentDelegate,
                                 ExceptionArgumentDelegate argumentNullDelegate,
                                 ExceptionArgumentDelegate argumentOutOfRangeDelegate);
@@ -101,7 +101,7 @@ class easy_chat_client_apiPINVOKE {
     }
 
     static SWIGExceptionHelper() {
-      SWIGRegisterExceptionCallbacks_easy_chat_client_api(
+      SWIGRegisterExceptionCallbacks_easy_chat_utils_api(
                                 applicationDelegate,
                                 arithmeticDelegate,
                                 divideByZeroDelegate,
@@ -114,7 +114,7 @@ class easy_chat_client_apiPINVOKE {
                                 overflowDelegate,
                                 systemDelegate);
 
-      SWIGRegisterExceptionCallbacksArgument_easy_chat_client_api(
+      SWIGRegisterExceptionCallbacksArgument_easy_chat_utils_api(
                                 argumentDelegate,
                                 argumentNullDelegate,
                                 argumentOutOfRangeDelegate);
@@ -173,67 +173,115 @@ class easy_chat_client_apiPINVOKE {
     public delegate string SWIGStringDelegate(string message);
     static SWIGStringDelegate stringDelegate = new SWIGStringDelegate(CreateString);
 
-    [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="SWIGRegisterStringCallback_easy_chat_client_api")]
-    public static extern void SWIGRegisterStringCallback_easy_chat_client_api(SWIGStringDelegate stringDelegate);
+    [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="SWIGRegisterStringCallback_easy_chat_utils_api")]
+    public static extern void SWIGRegisterStringCallback_easy_chat_utils_api(SWIGStringDelegate stringDelegate);
 
     static string CreateString(string cString) {
       return cString;
     }
 
     static SWIGStringHelper() {
-      SWIGRegisterStringCallback_easy_chat_client_api(stringDelegate);
+      SWIGRegisterStringCallback_easy_chat_utils_api(stringDelegate);
     }
   }
 
   static protected SWIGStringHelper swigStringHelper = new SWIGStringHelper();
 
 
-  static easy_chat_client_apiPINVOKE() {
+  static easy_chat_utils_apiPINVOKE() {
   }
 
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Server_Down_Exception_what")]
-  public static extern string Server_Down_Exception_what(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_BUFFER_SIZE_get")]
+  public static extern int BUFFER_SIZE_get();
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_new_Server_Down_Exception")]
-  public static extern global::System.IntPtr new_Server_Down_Exception();
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_SIZE_BYTES_get")]
+  public static extern int SIZE_BYTES_get();
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_delete_Server_Down_Exception")]
-  public static extern void delete_Server_Down_Exception(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Client_Down_Exception")]
+  public static extern global::System.IntPtr new_Client_Down_Exception();
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Login_Exception_what")]
-  public static extern string Login_Exception_what(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_delete_Client_Down_Exception")]
+  public static extern void delete_Client_Down_Exception(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_new_Login_Exception")]
-  public static extern global::System.IntPtr new_Login_Exception();
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Bad_Socket_Exception")]
+  public static extern global::System.IntPtr new_Bad_Socket_Exception();
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_delete_Login_Exception")]
-  public static extern void delete_Login_Exception(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_delete_Bad_Socket_Exception")]
+  public static extern void delete_Bad_Socket_Exception(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_new_Client")]
-  public static extern global::System.IntPtr new_Client(int jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Socket_Error_Exception")]
+  public static extern global::System.IntPtr new_Socket_Error_Exception();
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_delete_Client")]
-  public static extern void delete_Client(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_delete_Socket_Error_Exception")]
+  public static extern void delete_Socket_Error_Exception(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Client_connect_and_auth")]
-  public static extern void Client_connect_and_auth(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2, string jarg3);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Connection__SWIG_0")]
+  public static extern global::System.IntPtr new_Connection__SWIG_0(int jarg1, string jarg2, string jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Client_start_reciver")]
-  public static extern void Client_start_reciver(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Connection__SWIG_1")]
+  public static extern global::System.IntPtr new_Connection__SWIG_1(int jarg1, string jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Client_sender")]
-  public static extern void Client_sender(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Connection__SWIG_2")]
+  public static extern global::System.IntPtr new_Connection__SWIG_2(int jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Client_get_server_name")]
-  public static extern string Client_get_server_name(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Connection__SWIG_3")]
+  public static extern global::System.IntPtr new_Connection__SWIG_3();
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Client_set_server_name")]
-  public static extern void Client_set_server_name(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_delete_Connection")]
+  public static extern void delete_Connection(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Client_recive_message")]
-  public static extern string Client_recive_message(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_get_fixed_length_size")]
+  public static extern string Connection_get_fixed_length_size(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("easy_chat_client_api", EntryPoint="CSharp_Client_send_message")]
-  public static extern void Client_send_message(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_send_message")]
+  public static extern void Connection_send_message(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_recive_message")]
+  public static extern string Connection_recive_message(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_get_socket")]
+  public static extern global::System.IntPtr Connection_get_socket(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_set_socket")]
+  public static extern void Connection_set_socket(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_get_port_number")]
+  public static extern int Connection_get_port_number(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_set_port_number")]
+  public static extern void Connection_set_port_number(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_get_username")]
+  public static extern string Connection_get_username(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_set_username")]
+  public static extern void Connection_set_username(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_get_ip")]
+  public static extern string Connection_get_ip(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Connection_set_ip")]
+  public static extern void Connection_set_ip(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Connection_Message_Not_Sent_Exception")]
+  public static extern global::System.IntPtr new_Connection_Message_Not_Sent_Exception();
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_delete_Connection_Message_Not_Sent_Exception")]
+  public static extern void delete_Connection_Message_Not_Sent_Exception(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_new_Crypto_Manager")]
+  public static extern global::System.IntPtr new_Crypto_Manager();
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Crypto_Manager_get_sha3_512_hash")]
+  public static extern string Crypto_Manager_get_sha3_512_hash(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Crypto_Manager_rsa_decrypt")]
+  public static extern string Crypto_Manager_rsa_decrypt(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_Crypto_Manager_rsa_encrypt")]
+  public static extern global::System.IntPtr Crypto_Manager_rsa_encrypt(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("easy_chat_utils_api", EntryPoint="CSharp_delete_Crypto_Manager")]
+  public static extern void delete_Crypto_Manager(global::System.Runtime.InteropServices.HandleRef jarg1);
 }

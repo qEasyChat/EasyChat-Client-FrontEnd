@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyChat-Client-FrontEnd", "EasyChat-Client-FrontEnd.csproj", "{4CE79E65-27B3-4BBB-8046-8E7DC22713C2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7EC269F3-53D1-4C01-A8E3-78DBCCD8225C} = {7EC269F3-53D1-4C01-A8E3-78DBCCD8225C}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Easy-Chat-Client-API", "..\Easy-Chat-Client-API\Easy-Chat-Client-API\Easy-Chat-Client-API.vcxproj", "{7EC269F3-53D1-4C01-A8E3-78DBCCD8225C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Easy-Chat-Utils-API", "..\Easy-Chat-Utils-API\Easy-Chat-Utils-API\Easy-Chat-Utils-API.vcxproj", "{C675BB1D-116C-4B44-8995-0E78B2E7CC59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,11 +44,21 @@ Global
 		{7EC269F3-53D1-4C01-A8E3-78DBCCD8225C}.Release|x64.Build.0 = Release|x64
 		{7EC269F3-53D1-4C01-A8E3-78DBCCD8225C}.Release|x86.ActiveCfg = Release|Win32
 		{7EC269F3-53D1-4C01-A8E3-78DBCCD8225C}.Release|x86.Build.0 = Release|Win32
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Debug|x64.ActiveCfg = Debug|x64
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Debug|x64.Build.0 = Debug|x64
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Debug|x86.ActiveCfg = Debug|Win32
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Debug|x86.Build.0 = Debug|Win32
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|Any CPU.ActiveCfg = Release|Win32
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|x64.ActiveCfg = Release|x64
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|x64.Build.0 = Release|x64
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|x86.ActiveCfg = Release|Win32
+		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3927C54E-E2E0-4450-B724-ECE087C09D27}
+		SolutionGuid = {63FBD916-B421-49D7-A36A-DFAE9E431CD1}
 	EndGlobalSection
 EndGlobal

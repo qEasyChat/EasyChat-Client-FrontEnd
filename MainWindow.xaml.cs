@@ -48,11 +48,19 @@ namespace EasyChat_Client_FrontEnd
 
         private void connectButton_Click(object sender, RoutedEventArgs e)
         {
-            string serverName = serverNameTextBox.Text;
+            string serverIP = serverNameTextBox.Text;
             string portString = portNumberTextBox.Text;
+            string username = usernameTextBox.Text;
+            string password = passwordTextBox.Text;
             int port = Int32.Parse(portString);
             try
             {
+                MessageBox.Show()
+                Client client = new Client(port, serverIP);
+                client.connect_and_auth(username, password);
+                MessageBox.Show(client.recive_message());
+                client.send_message("asd");
+
                 MessageBox.Show("Server started successfully.");
             }
             catch (Exception exception)

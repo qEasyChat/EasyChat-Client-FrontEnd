@@ -70,4 +70,14 @@ public class Client : global::System.IDisposable {
     if (easy_chat_client_apiPINVOKE.SWIGPendingException.Pending) throw easy_chat_client_apiPINVOKE.SWIGPendingException.Retrieve();
   }
 
+  public string recive_message() {
+    string ret = easy_chat_client_apiPINVOKE.Client_recive_message(swigCPtr);
+    return ret;
+  }
+
+  public void send_message(string message) {
+    easy_chat_client_apiPINVOKE.Client_send_message(swigCPtr, message);
+    if (easy_chat_client_apiPINVOKE.SWIGPendingException.Pending) throw easy_chat_client_apiPINVOKE.SWIGPendingException.Retrieve();
+  }
+
 }

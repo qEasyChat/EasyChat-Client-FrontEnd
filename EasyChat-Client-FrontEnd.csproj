@@ -55,14 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Back-End-API\Client.cs" />
     <Compile Include="Back-End-API\cpp.cs" />
     <Compile Include="Back-End-API\cppPINVOKE.cs" />
@@ -73,6 +65,23 @@
     <Compile Include="Back-End-API\Login_Exception.cs" />
     <Compile Include="Back-End-API\Server_Down_Exception.cs" />
     <Compile Include="Back-End-API\SWIGTYPE_p_std__string.cs" />
+    <Compile Include="Utils-API\Bad_Socket_Exception.cs" />
+    <Compile Include="Utils-API\Client_Down_Exception.cs" />
+    <Compile Include="Utils-API\Connection.cs" />
+    <Compile Include="Utils-API\Crypto_Manager.cs" />
+    <Compile Include="Utils-API\easy_chat_utils_api.cs" />
+    <Compile Include="Utils-API\easy_chat_utils_apiPINVOKE.cs" />
+    <Compile Include="Utils-API\Socket_Error_Exception.cs" />
+    <Compile Include="Utils-API\SWIGTYPE_p_SOCKET.cs" />
+    <Compile Include="Utils-API\SWIGTYPE_p_std__vectorT_double_t.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -106,6 +115,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="github-logo.png" />
+    <Resource Include="logo.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
