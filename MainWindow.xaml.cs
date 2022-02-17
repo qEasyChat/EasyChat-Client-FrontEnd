@@ -55,7 +55,6 @@ namespace EasyChat_Client_FrontEnd
             int port = Int32.Parse(portString);
             try
             {
-                MessageBox.Show()
                 Client client = new Client(port, serverIP);
                 client.connect_and_auth(username, password);
                 MessageBox.Show(client.recive_message());
@@ -66,6 +65,7 @@ namespace EasyChat_Client_FrontEnd
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+                MessageBox.Show(exception.InnerException.Message);
             }
         }
     }
