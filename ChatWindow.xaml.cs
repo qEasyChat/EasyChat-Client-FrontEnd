@@ -15,13 +15,32 @@ using System.Windows.Shapes;
 namespace EasyChat_Client_FrontEnd
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for ChatWindow.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class ChatWindow : Window
     {
-        public Window1()
+        private Client client;
+
+        public ChatWindow(Client client)
         {
             InitializeComponent();
+            this.client = client;
+            serverNameLabel.Content = client.get_server_name();
+        }
+
+        private void addToChatBox(string message)
+        {
+            chatBox.AppendText(message);
+            chatBox.AppendText(Environment.NewLine);
+        }
+
+        private void updateChatBox()
+        {
+            while (true)
+            {
+                string message = this.client.recive_message();
+                this.addToChatBox(message);
+            }
         }
     }
 }
