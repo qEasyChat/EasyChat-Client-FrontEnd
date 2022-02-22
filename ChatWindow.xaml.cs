@@ -20,14 +20,18 @@ namespace EasyChat_Client_FrontEnd
     /// </summary>
     public partial class ChatWindow : Window
     {
+        private string username;
+
         private Client client;
 
-        public ChatWindow(Client client)
+        public ChatWindow(Client client, string username)
         {
             InitializeComponent();
+            this.username = username;
             this.client = client;
             serverNameLabel.Content = client.get_server_name();
             Thread updateChatBoxWorker = new Thread(updateChatBox);
+            updateChatBoxWorker.Start();
         }
 
 
@@ -38,6 +42,14 @@ namespace EasyChat_Client_FrontEnd
                 string message = this.client.recive_message();
                 SafeGUI.safeAppendText(chatBox, message);
             }
+        }
+
+        private void sendMessageButton_Click(object sender, RoutedEventArgs e)
+        {
+            string message = sendMessageBox.Text;
+            client.send_message(message);
+            string ownMessage = username + ": " + message;
+            SafeGUI.safeAppendText(chatBox, ownMessage);
         }
     }
 }
