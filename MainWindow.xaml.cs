@@ -57,10 +57,10 @@ namespace EasyChat_Client_FrontEnd
             {
                 Client client = new Client(port, serverIP);
                 client.connect_and_auth(username, password);
-                MessageBox.Show(client.recive_message());
-                client.send_message("asd");
+                ChatWindow chatWindow = new ChatWindow(client, username);
+                chatWindow.Show();
+                this.Hide();
 
-                MessageBox.Show("Server started successfully.");
             }
             catch (Exception exception)
             {
