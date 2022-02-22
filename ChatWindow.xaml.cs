@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,20 +27,16 @@ namespace EasyChat_Client_FrontEnd
             InitializeComponent();
             this.client = client;
             serverNameLabel.Content = client.get_server_name();
+            Thread updateChatBoxWorker = new Thread(updateChatBox);
         }
 
-        private void addToChatBox(string message)
-        {
-            chatBox.AppendText(message);
-            chatBox.AppendText(Environment.NewLine);
-        }
 
         private void updateChatBox()
         {
             while (true)
             {
                 string message = this.client.recive_message();
-                this.addToChatBox(message);
+                SafeGUI.safeAppendText(chatBox, message);
             }
         }
     }

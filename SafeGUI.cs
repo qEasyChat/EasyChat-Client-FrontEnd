@@ -17,7 +17,10 @@ namespace EasyChat_Client_FrontEnd
                 textBox.AppendText(Environment.NewLine);
                 textBox.ScrollToEnd();
             }
-            else textBox.Dispatcher.Invoke(new Action<TextBox, string>(safeAppendText), textBox, str);
+            else
+            {
+                textBox.Dispatcher.Invoke(new Action<TextBox, string>(safeAppendText), textBox, str);
+            }
         }
 
     }
