@@ -50,6 +50,7 @@ namespace EasyChat_Client_FrontEnd
             client.send_message(message);
             string ownMessage = username + ": " + message;
             SafeGUI.safeAppendText(chatBox, ownMessage);
+            sendMessageBox.Text = "";
         }
     }
 }

@@ -38,7 +38,7 @@ namespace EasyChat_Client_FrontEnd
 
         private void serverNameTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            serverNameTextBox.Text = "";
+            //serverNameTextBox.Text = "";
         }
 
         private void portNumberTextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -67,6 +67,16 @@ namespace EasyChat_Client_FrontEnd
                 MessageBox.Show(exception.Message);
                 MessageBox.Show(exception.InnerException.Message);
             }
+        }
+
+        private void usernameTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            usernameTextBox.Text = "";
+        }
+
+        private void passwordTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            passwordTextBox.Text = "";
         }
     }
 }
