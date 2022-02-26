@@ -41,7 +41,8 @@ namespace EasyChat_Client_FrontEnd
             if (label.Dispatcher.CheckAccess())
             {
                 string content = label.Content.ToString();
-                string newContent = content.Replace(str, "")
+                string newContent = content.Replace(str, "");
+                label.Content = newContent
             }
             else
             {
