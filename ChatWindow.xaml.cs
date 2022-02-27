@@ -20,6 +20,9 @@ namespace EasyChat_Client_FrontEnd
     /// </summary>
     public partial class ChatWindow : Window
     {
+        private const string CHECK_ONLINE_USERS_STRING = "ONLINE USERS";
+        private const string CHECK_USER_LIST_CHANGE_STRING = " has ";
+
         private string username;
 
         private Client client;
@@ -40,8 +43,26 @@ namespace EasyChat_Client_FrontEnd
             while (true)
             {
                 string message = this.client.recive_message();
+
+                if (message.Contains(CHECK_USER_LIST_CHANGE_STRING))
+                {
+
+                }
                 SafeGUI.safeAppendText(chatBox, message);
             }
+        }
+
+        private bool checkOnlineUserList(string message)
+        {
+            if (message.Contains(CHECK_ONLINE_USERS_STRING))
+            {
+                int userListStartPosition = CHECK_ONLINE_USERS_STRING.Length + 2;
+                string userList = message.Substring(userListStartPosition);
+                SafeGUI.safeSetText(userListLabel, userList);
+                return true;
+            }
+
+            return false;
         }
 
         private void sendMessageButton_Click(object sender, RoutedEventArgs e)
