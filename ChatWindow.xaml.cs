@@ -43,11 +43,9 @@ namespace EasyChat_Client_FrontEnd
             while (true)
             {
                 string message = this.client.recive_message();
-
-
-                if (message.Contains(CHECK_USER_LIST_CHANGE_STRING))
+                if (checkOnlineUserList(message) || checkUserListChange(message))
                 {
-
+                    continue;
                 }
                 SafeGUI.safeAppendText(chatBox, message);
             }
@@ -66,7 +64,7 @@ namespace EasyChat_Client_FrontEnd
             return false;
         }
 
-        private bool checkUserList(string message)
+        private bool checkUserListChange(string message)
         {
             if (message.Contains(CHECK_USER_LIST_CHANGE_STRING))
             {
