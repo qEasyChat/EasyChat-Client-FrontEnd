@@ -36,13 +36,26 @@ namespace EasyChat_Client_FrontEnd
             }
         }
 
+        
+        public static void safeSetText(Label label, string str)
+        {
+            if (label.Dispatcher.CheckAccess())
+            {
+                label.Content = str;
+            }
+            else
+            {
+                label.Dispatcher.Invoke(new Action<TextBox, string>(safeAppendText), label, str);
+            }
+        }
+
         public static void safeRemoveText(Label label, string str)
         {
             if (label.Dispatcher.CheckAccess())
             {
                 string content = label.Content.ToString();
                 string newContent = content.Replace(str, "");
-                label.Content = newContent
+                label.Content = newContent;
             }
             else
             {
