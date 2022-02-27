@@ -32,7 +32,7 @@ namespace EasyChat_Client_FrontEnd
             }
             else
             {
-                label.Dispatcher.Invoke(new Action<TextBox, string>(safeAppendText), label, str);
+                label.Dispatcher.Invoke(new Action<Label, string>(safeAppendText), label, str);
             }
         }
 
@@ -45,7 +45,7 @@ namespace EasyChat_Client_FrontEnd
             }
             else
             {
-                label.Dispatcher.Invoke(new Action<TextBox, string>(safeAppendText), label, str);
+                label.Dispatcher.Invoke(new Action<Label, string>(safeSetText), label, str);
             }
         }
 
@@ -59,7 +59,7 @@ namespace EasyChat_Client_FrontEnd
             }
             else
             {
-                label.Dispatcher.Invoke(new Action<TextBox, string>(safeAppendText), label, str);
+                label.Dispatcher.Invoke(new Action<Label, string>(safeAppendText), label, str);
             }
         }
 
