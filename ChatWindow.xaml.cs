@@ -21,7 +21,7 @@ namespace EasyChat_Client_FrontEnd
     public partial class ChatWindow : Window
     {
         private const string CHECK_ONLINE_USERS_STRING = "ONLINE USERS";
-        private const string CHECK_USER_LIST_CHANGE_STRING = " ";
+        private const string CHECK_USER_LIST_CHANGE_STRING = " has";
 
         private string username;
 
@@ -55,7 +55,7 @@ namespace EasyChat_Client_FrontEnd
         {
             if (message.Contains(CHECK_ONLINE_USERS_STRING))
             {
-                int userListStartPosition = CHECK_ONLINE_USERS_STRING.Length + 2;
+                int userListStartPosition = CHECK_ONLINE_USERS_STRING.Length + 3;
                 string userList = message.Substring(userListStartPosition);
                 SafeGUI.safeSetText(userListLabel, userList);
                 return true;
@@ -69,7 +69,7 @@ namespace EasyChat_Client_FrontEnd
             if (message.Contains(CHECK_USER_LIST_CHANGE_STRING))
             {
                 int usernameEndPosition = message.IndexOf(CHECK_USER_LIST_CHANGE_STRING);
-                int usernameLength = CHECK_USER_LIST_CHANGE_STRING.Length - usernameEndPosition;
+                int usernameLength = message.Length - usernameEndPosition;
                 string username = message.Substring(0, usernameLength);
                 SafeGUI.safeAppendText(userListLabel, username);
                 return true;
