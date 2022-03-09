@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Easy-Chat-Client-API", "..\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Easy-Chat-Utils-API", "..\Easy-Chat-Utils-API\Easy-Chat-Utils-API\Easy-Chat-Utils-API.vcxproj", "{C675BB1D-116C-4B44-8995-0E78B2E7CC59}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EasyChat-Client-Installer", "..\EasyChat-Client-Installer\EasyChat-Client-Installer.vdproj", "{21471097-D442-4C02-9744-2150417C86CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,12 @@ Global
 		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|x64.Build.0 = Release|x64
 		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|x86.ActiveCfg = Release|Win32
 		{C675BB1D-116C-4B44-8995-0E78B2E7CC59}.Release|x86.Build.0 = Release|Win32
+		{21471097-D442-4C02-9744-2150417C86CB}.Debug|Any CPU.ActiveCfg = Debug
+		{21471097-D442-4C02-9744-2150417C86CB}.Debug|x64.ActiveCfg = Debug
+		{21471097-D442-4C02-9744-2150417C86CB}.Debug|x86.ActiveCfg = Debug
+		{21471097-D442-4C02-9744-2150417C86CB}.Release|Any CPU.ActiveCfg = Release
+		{21471097-D442-4C02-9744-2150417C86CB}.Release|x64.ActiveCfg = Release
+		{21471097-D442-4C02-9744-2150417C86CB}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

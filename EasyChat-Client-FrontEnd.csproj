@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="app-info.xml" />
     <Resource Include="github-logo.png" />
     <Resource Include="logo.png" />
   </ItemGroup>
