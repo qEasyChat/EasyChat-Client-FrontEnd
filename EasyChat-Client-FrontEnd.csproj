@@ -66,6 +66,7 @@
     <Compile Include="Back-End-API\Server_Down_Exception.cs" />
     <Compile Include="Back-End-API\SWIGTYPE_p_std__string.cs" />
     <Compile Include="SafeGUI.cs" />
+    <Compile Include="Updater.cs" />
     <Compile Include="Utils-API\Bad_Socket_Exception.cs" />
     <Compile Include="Utils-API\Client_Down_Exception.cs" />
     <Compile Include="Utils-API\Connection.cs" />
