@@ -23,6 +23,8 @@ namespace EasyChat_Client_FrontEnd
         public MainWindow()
         {
             InitializeComponent();
+            Updater updater = new Updater();
+            MessageBox.Show(updater.checkNewVersion());
         }
 
         private void runServerButton_Click(object sender, RoutedEventArgs e)

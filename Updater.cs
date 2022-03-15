@@ -15,13 +15,40 @@ namespace EasyChat_Client_FrontEnd
         const int currentHotFixVersion = 1;
 
         private const string appInfoURL =
-            "https://raw.githubusercontent.com/qEasyChat/EasyChat-Client-FrontEnd/master/app-info.xml";
+            @"https://raw.githubusercontent.com/qEasyChat/EasyChat-Client-FrontEnd/master/app-info.xml";
+
+        public Updater()
+        {
+
+        }
 
         public string checkNewVersion()
         {
             List<int> versionList = getServerVersion();
-            int ServerMajorVersion = versionList[0];
+            if (versionList.Count < 3)
+            {
+                return "Could not get full version from the server";
+            }
+            int serverMajorVersion = versionList[0];
+            int serverMinorVersion = versionList[1];
+            int serverHotFixVersion = versionList[2];
 
+            if (serverMajorVersion > currentMajorVersion)
+            {
+                return "There is a new major version.";
+            }
+
+            if (serverMinorVersion > currentMinorVersion)
+            {
+                return "There is a new minor version.";
+            }
+
+            if (serverHotFixVersion > currentHotFixVersion)
+            {
+                return "There is a new hotfix version.";
+            }
+
+            return "No update is needed.";
         }
 
         private List<int> getServerVersion()
@@ -32,9 +59,9 @@ namespace EasyChat_Client_FrontEnd
                 while (reader.Read())
                 {
 
-                    if (reader.NodeType == XmlNodeType.Element && reader.Name == "version")
+                    if (reader.NodeType == XmlNodeType.Element && reader.Name == "Version")
                     {
-                        string fullVersionString = reader.Value;
+                        string fullVersionString = reader.ReadElementContentAsString();
                         string[] versionValues = fullVersionString.Split('.');
                         int serverMajorVersion = Convert.ToInt32(versionValues[0]);
                         int serverMinorVersion = Convert.ToInt32(versionValues[1]);
