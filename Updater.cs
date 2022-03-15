@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Mime;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -27,7 +29,6 @@ namespace EasyChat_Client_FrontEnd
             lastVersionURL = "";
             versionList = new List<int>();
             checkServer();
-            update();
         }
 
         private void checkServer()
@@ -89,8 +90,12 @@ namespace EasyChat_Client_FrontEnd
         {
             using (var client = new WebClient())
             {
-                client.DownloadFile(lastVersionURL, "EasyChat-Client-FrontEnd-new.exe");
+                client.DownloadFile(lastVersionURL, "EasyChat-Client-FrontEnd-update.exe");
             }
+
+            string currentPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            File.Move("EasyChat-Client-FrontEnd.exe", "EasyChat-Client-FrontEnd.bak");
+            File.Copy("EasyChat-Client-FrontEnd-update.exe", "EasyChat-Client-FrontEnd.exe");
 
         }
     }
