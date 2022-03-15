@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -10,50 +11,27 @@ namespace EasyChat_Client_FrontEnd
 {
     class Updater
     {
-        const int currentMajorVersion = 1;
-        const int currentMinorVersion = 0;
-        const int currentHotFixVersion = 1;
+        const int CURRENT_MAJOR_VERSION = 1;
+        const int CURRENT_MINOR_VERSION = 0;
+        const int CURRENT_HOTFIX_VERSION = 1;
+
+        private string lastVersionURL;
+        private List<int> versionList;
+
 
         private const string appInfoURL =
             @"https://raw.githubusercontent.com/qEasyChat/EasyChat-Client-FrontEnd/master/app-info.xml";
 
         public Updater()
         {
-
+            lastVersionURL = "";
+            versionList = new List<int>();
+            checkServer();
+            update();
         }
 
-        public string checkNewVersion()
+        private void checkServer()
         {
-            List<int> versionList = getServerVersion();
-            if (versionList.Count < 3)
-            {
-                return "Could not get full version from the server";
-            }
-            int serverMajorVersion = versionList[0];
-            int serverMinorVersion = versionList[1];
-            int serverHotFixVersion = versionList[2];
-
-            if (serverMajorVersion > currentMajorVersion)
-            {
-                return "There is a new major version.";
-            }
-
-            if (serverMinorVersion > currentMinorVersion)
-            {
-                return "There is a new minor version.";
-            }
-
-            if (serverHotFixVersion > currentHotFixVersion)
-            {
-                return "There is a new hotfix version.";
-            }
-
-            return "No update is needed.";
-        }
-
-        private List<int> getServerVersion()
-        {
-            List<int> versionList = new List<int>();
             using (var reader = new XmlTextReader(appInfoURL))
             {
                 while (reader.Read())
@@ -69,14 +47,52 @@ namespace EasyChat_Client_FrontEnd
                         versionList.Add(serverMajorVersion);
                         versionList.Add(serverMinorVersion);
                         versionList.Add(serverHotFixVersion);
+                    } else if (reader.NodeType == XmlNodeType.Element && reader.Name == "NewVersionURL")
+                    {
+                        lastVersionURL = reader.ReadElementContentAsString();
                     }
 
                 }
             }
-
-            return versionList;
         }
 
+        public bool isUpdateRequired()
+        {
+            if (versionList.Count < 3)
+            {
+                return false;
+            }
+            int serverMajorVersion = versionList[0];
+            int serverMinorVersion = versionList[1];
+            int serverHotFixVersion = versionList[2];
+
+            if (serverMajorVersion > CURRENT_MAJOR_VERSION)
+            {
+                return true;
+            }
+
+            if (serverMinorVersion > CURRENT_MINOR_VERSION)
+            {
+                return true;
+            }
+
+            if (serverHotFixVersion > CURRENT_HOTFIX_VERSION)
+            {
+                return true;
+            }
+
+            return false;
+
+        }
+
+        public void update()
+        {
+            using (var client = new WebClient())
+            {
+                client.DownloadFile(lastVersionURL, "EasyChat-Client-FrontEnd-new.exe");
+            }
+
+        }
     }
 
 }
