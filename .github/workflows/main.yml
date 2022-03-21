@@ -9,20 +9,20 @@ on:
 jobs:
   pre-release:
     name: "Pre Release"
-    runs-on: "ubuntu-latest"
 
     steps:
       # ...
       - name: "Build & test"
         run: |
           echo "done!"
-
-      - uses: "marvinpinto/action-automatic-releases@latest"
+ 
+      - uses: "./packages/automatic-releases/"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
           title: "Development Build"
           files: |
-            *.txt
-            *.xml
+            test.txt
+            ./app-info.xml
+        id: "automatic_releases"
