@@ -10,13 +10,14 @@ jobs:
   pre-release:
     name: "Pre Release"
     runs-on: "ubuntu-latest"
+
     steps:
       # ...
       - name: "Build & test"
         run: |
           echo "done!"
-  uses: 
-      - uses: "marvinpinto/action-automatic-releases@v1.2.1"
+
+      - uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
@@ -24,5 +25,4 @@ jobs:
           title: "Development Build"
           files: |
             test.txt
-            ./app-info.xml
-        id: "automatic_releases"
+            *.xml
