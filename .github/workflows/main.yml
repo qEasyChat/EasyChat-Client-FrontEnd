@@ -25,3 +25,5 @@ jobs:
           title: "Development Build"
           files: |
             test.txt
+            main.yml
+
