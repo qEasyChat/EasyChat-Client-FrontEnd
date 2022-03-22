@@ -12,19 +12,12 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - name: "Build & test"
-        run: |
-          echo "done!"
-
-      - name: Create Release
-        uses: marvinpinto/action-automatic-releases@latest
-
+      - name: Create Release With Asset
+        id: Release-AIO
+        uses: Hs1r1us/Release-AIO@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          title: ${{ env.VERSION }}
-          prerelease: false
-          automatic_release_tag: "latest"
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          files: |
-              *.txt
-              ./pre-release.yml
-              output/*
+          tag_name: ${{ github.ref }}
+          asset_files: './test.txt'
+
