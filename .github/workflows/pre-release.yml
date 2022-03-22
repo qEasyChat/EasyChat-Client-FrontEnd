@@ -2,9 +2,8 @@ name: Releases
 
 on: 
   push:
-    tags:
-    - '*'
-
+      branches: 'master'
+      
 jobs:
 
   build:
