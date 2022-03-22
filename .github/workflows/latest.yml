@@ -1,0 +1,32 @@
+---
+name: "pre-release"
+
+on:
+  push:
+    branches:
+      - "master"
+    tags-ignore:
+      - "*"
+
+jobs:
+  gh_pre_release:
+    runs-on: "ubuntu-latest"
+    env:
+      JEST_VERBOSE: ${{ secrets.JEST_VERBOSE }}
+
+    steps:
+      - uses: "./automatic-releases/"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            *.txt
+        id: "automatic_releases"
+
+      - uses: "./packages/keybase-notifications"
+        if: always()
+        with:
+          job_status: ${{ job.status }}
+          opensentinel_token: ${{ secrets.OSL_TOKEN }}
