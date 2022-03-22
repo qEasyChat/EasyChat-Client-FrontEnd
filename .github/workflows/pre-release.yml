@@ -13,6 +13,7 @@ jobs:
 
     steps:
       # ...
+      secrets.ACTIONS_STEP_DEBUG:true
       - name: "Build & test"
         run: |
           echo "done!"
