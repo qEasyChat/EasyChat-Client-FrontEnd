@@ -25,4 +25,6 @@ jobs:
           automatic_release_tag: "latest"
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           files: |
+              *.txt
+              ./pre-release.yml
               output/*
