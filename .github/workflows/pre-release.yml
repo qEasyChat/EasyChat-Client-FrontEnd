@@ -15,5 +15,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "test.txt,output/*.txt"
+        artifacts: "output/*.exe"
         token: ${{ secrets.GITHUB_TOKEN }}
