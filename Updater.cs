@@ -14,7 +14,7 @@ namespace EasyChat_Client_FrontEnd
     class Updater
     {
         const int CURRENT_MAJOR_VERSION = 1;
-        const int CURRENT_MINOR_VERSION = 1;
+        const int CURRENT_MINOR_VERSION = 0;
         const int CURRENT_HOTFIX_VERSION = 0;
 
         private string lastVersionURL;
