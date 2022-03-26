@@ -69,8 +69,7 @@ namespace EasyChat_Client_FrontEnd
             if (message.Contains(CHECK_USER_LIST_CHANGE_STRING))
             {
                 int usernameEndPosition = message.IndexOf(CHECK_USER_LIST_CHANGE_STRING);
-                int usernameLength = message.Length - usernameEndPosition;
-                string username = message.Substring(0, usernameLength);
+                string username = message.Substring(0, usernameEndPosition);
                 SafeGUI.safeAppendText(userListLabel, username);
                 return true;
             }
@@ -85,6 +84,12 @@ namespace EasyChat_Client_FrontEnd
             string ownMessage = username + ": " + message;
             SafeGUI.safeAppendText(chatBox, ownMessage);
             sendMessageBox.Text = "";
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
         }
     }
 }
