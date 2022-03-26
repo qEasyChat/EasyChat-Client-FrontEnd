@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasyChat_Client_FrontEnd"
         mc:Ignorable="d"
-        Title="ChatWindow" Height="500" Width="800" Background="#FF00226C">
+        Title="ChatWindow" Height="500" Width="800" Background="#FF00226C" Closed="Window_Closed">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="241*"/>

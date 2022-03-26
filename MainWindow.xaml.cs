@@ -28,7 +28,7 @@ namespace EasyChat_Client_FrontEnd
             {
                 MessageBoxResult messageBox = MessageBox.Show("There is a new update. Do you wish to download it now?",
                     "New Update");
-                if (messageBox == MessageBoxResult.Yes)
+                if (messageBox == MessageBoxResult.OK)
                 {
                     updater.update();
                     System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
